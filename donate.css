@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: rgb(211, 204, 194);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  header nav ul li {
+    display: inline;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  section {
+    width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  section#donate form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  section#donate form label {
+    margin-top: 10px;
+  }
+  
+  section#donate form input,
+  section#donate form select,
+  section#donate form button {
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  section#donate form button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  section#donate form button:hover {
+    background-color: #2980b9;
+  }
+  
+  #books .book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #books .book {
+    padding: 10px;
+    background-color: rgb(211, 204, 194);
+    border-radius: 5px;
+  }
+  
+  footer {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+  }
+  
+  @media (max-width: 600px) {
+    section {
+      width: 90%;
+    }
+  
+    header nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }

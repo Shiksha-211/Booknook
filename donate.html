@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Books</title>
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1>Donate Books</h1>
+        <nav>
+            <ul>
+                <li><a href="home_page.html">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#donate">REVIEW</a></li>
+                <li><a href="#books">BOOKS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Welcome to Donate Books of BOOK NOOK Store</h2>
+        <p>Your generosity can bring the joy of reading to others. Donate your books and make a difference today!</p>
+    </section>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a non-profit organization dedicated to promoting literacy by providing books to those in need. Our mission is to ensure that every book finds a loving home.</p>
+    </section>
+    
+    <section id="donate">
+        <h2>Donate Your Books</h2>
+        <form id="donateForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="bookTitle">Book Title:</label>
+            <input type="text" id="bookTitle" name="bookTitle" required>
+            
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+            
+            <label for="condition">Condition:</label>
+            <select id="condition" name="condition" required>
+                <option value="new">New</option>
+                <option value="good">Good</option>
+                <option value="used">Used</option>
+            </select>
+            
+            <button type="submit">Donate</button>
+        </form>
+    </section>
+    
+    <section id="books">
+        <h2>Books Available for Donation</h2>
+        
+        <div class="book-list">
+            <div class="book">
+                <h3>The Great Gatsby</h3>
+                <p>by F. Scott Fitzgerald</p>
+            </div>
+            <div class="book">
+                <h3>To Kill a Mockingbird</h3>
+                <p>by Harper Lee</p>
+                <div class="comment-section">
+                    
+                    
+            </div>
+            
+           
+        </div>
+        <button class="comment-btn" onclick="submitComment(this)">WANNA BUY</button>
+                    <div class="comments"></div>
+                </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need more information, please <a href="mailto:info@donatebooks.org">contact us</a>.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Donate Books. All rights reserved.</p>
+        <div class="social">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+
+        </div>
+        
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

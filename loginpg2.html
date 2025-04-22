@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="pj1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+    <style>
+        /* Popup Styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .open-popup {
+            display: block;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section class="container"> 
+        <div class="form-banner">
+            <!-- <img src="" alt="form banner"> -->
+        </div>
+        <div class="form-content">
+            <!-- Login Form -->
+            <div class="form login">
+                <div class="form-title">
+                    <h1>Login</h1>
+                    <p>A place that has it all!</p>
+                </div>
+                <form action="#" onsubmit="return validateLoginForm()">
+                    <div class="input-field">
+                        <input type="email" id="login-email" placeholder="Email" required>
+                        <div class="error-message" id="login-email-error"></div>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                        <i class="ri-eye-off-line"></i>
+                    </div>
+                    <div class="auth-options">
+                        <div class="remember-me">
+                            <input type="checkbox">
+                            <label for="remember-me">Remember Me</label><br>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    </div>
+                    <button type="button" class="login-btn" onclick="openPopup()">Continue</button>
+                    <div class="popup" id="popup">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png" alt="Success">
+                        <h2>Thank you!</h2>
+                        <p>Your details have been successfully submitted. Thanks!</p>
+                        <button type="button" onclick="closePopup()">OK</button>
+                    </div>
+                    <div class="signup-option">
+                        <p>Don't have an account? <a href="#" class="signup-link">Sign up</a></p>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Sign Up Form -->
+            <div class="form signup">
+                <i class="ri-arrow-left-line prev"></i>
+                <div class="form-title">
+                    <h1>Sign Up</h1>
+                    <p>A place that has it all!</p>
+                </div>
+                <form action="#" onsubmit="return validateSignUpForm()">
+                    <div class="input-field">
+                        <input type="email" id="signup-email" placeholder="Email" required>
+                        <div class="error-message" id="signup-email-error"></div>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signup-password" placeholder="Password" required>
+                        <i class="ri-eye-off-line"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                        <i class="ri-eye-off-line"></i>
+                    </div>
+                    <div class="auth-options">
+                        <div class="remember-me">
+                            <input type="checkbox" required>
+                            <label for="remember-me">Agree to Privacy Policy</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="login-btn">Continue</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        let popup = document.getElementById("popup");
+
+        function openPopup() {
+            popup.classList.add("open-popup");
+        }
+
+        function closePopup() {
+            popup.classList.remove("open-popup");
+        }
+
+        // Email Validation Function
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validateLoginForm() {
+            const loginEmail = document.getElementById("login-email");
+            const loginEmailError = document.getElementById("login-email-error");
+            const isEmailValid = validateEmail(loginEmail.value);
+
+            if (!isEmailValid) {
+                loginEmailError.textContent = "Please enter a valid email address.";
+                return false;
+            } else {
+                loginEmailError.textContent = "";
+            }
+
+            return true;
+        }
+
+        function validateSignUpForm() {
+            const signupEmail = document.getElementById("signup-email");
+            const signupEmailError = document.getElementById("signup-email-error");
+            const isEmailValid = validateEmail(signupEmail.value);
+
+            if (!isEmailValid) {
+                signupEmailError.textContent = "Please enter a valid email address.";
+                return false;
+            } else {
+                signupEmailError.textContent = "";
+            }
+
+            // Password Validation
+            let password = document.getElementById("signup-password").value;
+            let confirmPassword = document.getElementById("confirm-password").value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return false;
+            }
+
+            return true;
+        }
+
+        // Handle form toggle
+        const signUp = document.querySelector('.signup-link');
+        const formContent = document.querySelector('.form-content');
+        const prev = document.querySelector('.prev');
+        signUp.addEventListener('click', function() {
+            formContent.classList.add('active');
+        });
+        prev.addEventListener('click', function() {
+            formContent.classList.remove('active');
+        });
+
+        // Handle password visibility toggle
+        const passwordToggles = document.querySelectorAll('.ri-eye-off-line');
+        passwordToggles.forEach(function(toggle) {
+            toggle.addEventListener('click', function() {
+                const passwordField = this.previousElementSibling;
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    this.classList.remove('ri-eye-off-line');
+                    this.classList.add('ri-eye-line');
+                } else {
+                    passwordField.type = 'password';
+                    this.classList.remove('ri-eye-line');
+                    this.classList.add('ri-eye-off-line');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

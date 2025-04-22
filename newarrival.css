@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    margin: 4vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.sidebar {
+    width: 25%;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 15px;
+    height: 92vh;
+    box-shadow: 0px 0px 3px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.data {
+    width: 73%;
+    border-radius: 3px;
+    height: 92vh;
+    overflow-y: auto;
+}
+
+.fa-circle {
+    color: orangered;
+}
+
+.searchbox {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 3px;
+    padding: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.glass:hover {
+    color: orangered;
+    cursor: pointer;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-brands {
+    font-size: 25px;
+    margin: 0 10px;
+    color: #333;
+    cursor: pointer;
+}
+
+.fa-brands:hover {
+    color: orangered;
+}
+
+.top {
+    height: 60px;
+    border-radius: 3px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.header {
+    height: 100px;
+    border-radius: 3px;
+    background-color: #333;
+    margin: 3vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header p {
+    font-size: 40px;
+    font-weight: bold;
+    color: white; 
+}
+
+#root {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 20px;
+}
+
+.box {
+    margin: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.img-box {
+    width: 100%;
+    height: 176px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.bottom {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 110px;
+}
+h2 {
+    font-size: 20px;
+    color: orangered;
+}
+
+button {
+    width: 100%;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    padding: 7px 25px;
+    cursor: pointer;
+    color: white;
+}
+
+button:hover {
+    background-color: orangered;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+.navbar {
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #eee;
+
+}
+.navbar-left{
+    flex: 1;
+    padding: 20px;
+    align-items: center;
+}
+.navbar-center{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-right{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    color: #eee;
+}
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    background-color: orangered;
+    border-radius: 4px;
+}
+#searchBar{
+    color: #eee; 
+    padding: 5px;
+}
+.fa-magnifying-glass{
+    padding-right: 20px;
+}
+.sidebar-right{
+    flex: 1;
+    border-radius: 3px;
+    height: 92vh;
+    padding: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.searchbox{
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    border-radius: 3px;
+    padding: 9px;
+}
+input{
+    border: none;
+    outline: none;
+    background: none;
+}
+.glass:hover{
+    color: orangered;
+    cursor: pointer;
+}
+.content-wrapper{
+    display: flex;
+    width: 100%;
+}
+.data{
+    flex: 3;
+    border-radius: 3px;
+    height: 92vh;
+    overflow-y: auto;
+    margin-right: 20px
+
+}
+.bg-comment-box {
+    border-radius: 10px;
+  }
+  
+  #comment-input {
+    border-radius: 8px;
+  }
+  
+  #submit-comment {
+    border: none;
+  }

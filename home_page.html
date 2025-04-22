@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            /* color: #000; */
+        }
+
+        .bookly {
+            display: flex;
+            background-image: url(home_page.jpg);
+        }
+
+        .left {
+            flex: 30%;
+        }
+
+        .middle {
+            flex: 40%;
+            height: 400;
+            font-style: oblique;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .right {
+            flex: 30%;
+        }
+
+        body {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #000;
+            background-color: #f5f5dc;
+
+        }
+
+        .header {
+            color: #A9A9A9;
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo a {
+            font-size: 24px;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            margin: 0 10px;
+            color: #000;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-form input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .search-form button {
+            padding: 8px 12px;
+            background-color: #A9A9A9;
+            ;
+            color: #060202;
+            border: none;
+            cursor: pointer;
+        }
+
+        .icons a {
+            color: #000;
+            margin-left: 10px;
+        }
+
+
+        .bookly {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #fff;
+            color: #160707;
+        }
+
+        .bookly h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .bookly p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .bookly .btn {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #04180c;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .categories {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .category-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            background-color: #A9A9A9;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .featured-section,
+        .arrival-section {
+            padding: 40px 20px;
+            background-color: #f5f5dc;
+            text-align: center;
+        }
+
+        .book {
+            background-color: #f5f5dc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .book img {
+            max-width: 100%;
+        }
+
+        .book h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+
+
+        .book {
+            width: 25%;
+            padding: 10px;
+            background-color: white;
+            border-radius: 20px;
+        }
+
+        .book img {
+            max-width: 100%;
+        }
+
+        .book h3 {
+            font-size: 12px;
+            margin: 10px 0;
+        }
+
+        .reviews-section {
+            background-color: #f5f5dc;
+            padding: 40px 20px;
+        }
+
+        .review-container {
+            display: flex;
+            border: 2px solid #A9A9A9;
+            padding: 15px;
+            gap: 10px;
+            background-color: ghostwhite;
+        }
+
+        .review {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .review p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .review span {
+            font-size: 14px;
+            color: #666;
+        }
+
+
+        .footer {
+            background-color: #A9A9A9;
+            color: #000;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin: 0;
+        }
+
+        .hero {
+            margin: 20px 0;
+            color: #000;
+            /* background-color:; */
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .container {
+            display: flex;
+            border: 2px solid #A9A9A9;
+            padding: 15px;
+            gap: 10px;
+            background-color: ghostwhite;
+        }
+
+        .btn {
+            color: black;
+            border: 2px solid black;
+        }
+
+        .d-flex :hover {
+            color: #000;
+            background-color: #A9A9A9;
+        }
+
+        .nav-link:hover {
+            color: #A9A9A9;
+        }
+
+        .middle .btn {
+            background-color: #f5f5dc;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">Book Nook</a>
+            </div>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <!-- <a class="navbar-brand" href="#">Home</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button> -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="home_page.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="newarrival.html">New Arrivals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="featured.html">Featured</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="review.html">Reviews</a>
+                           </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="donate.html">Donate</a>
+                                </li>
+                            <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li> -->
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" id="Searchbox"
+                                aria-label="Search">
+                            <button class="btn" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <!-- <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="featuredpg.html">Featured</a>
+                <a href="arrivalpg.html">New Arrivals</a>
+                <a href="reviewpg.html">Reviews</a>
+                <a href="#friends">Friends</a>
+            </nav>
+            <div class="search-form">
+                <input type="text" placeholder="Search for books...">
+                <button type="search">Search</button>
+            </div> -->
+            <div class="icons">
+                <!--a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-shopping-cart"></a-->
+                <a href="#foooter" class="fas fa-user"></a>
+            </div>
+        </div>
+    </header>
+
+    <div id="home" class="bookly">
+        <div class="left">
+
+        </div>
+        <div class="middle">
+            <h1>Welcome to Book Nook</h1>
+            <p>Your one-stop shop for books of all genres!</p>
+            <a href="loginpg2.html" class="btn">Log in</a>
+        </div>
+        <div class="right">
+
+
+        </div>
+    </div>
+    <div class="hero">
+        <h1><u>
+                <center>"Welcome to Your Next Great Escape!"
+            </u></center>
+        </h1>
+        <center>
+            <p>You've just stepped into a realm where books aren't just read—they whisper, laugh, and occasionally
+                challenge you to a duel of wits! Whether you're here to escape into distant worlds or find a quirky
+                companion for your coffee break, we've got just the page-turner for you. Grab a comfy spot, let your
+                imagination loose, and happy browsing through your next adventure!</p>
+        </center>
+    </div>
+    <section class="categories">
+        <h2>Explore Categories</h2>
+        <div class="category-grid">
+            <div class="category"><a href="#">Fiction</a></div>
+            <div class="category"><a href="non_fiction.html">Non-Fiction</a></div>
+            <div class="category"><a href="#">Art & Desgin</a></div>
+            <div class="category"><a href="#">Business</a></div>
+            <div class="category"><a href="it_html.html">IT & Technology</a></div>
+            <div class="category"><a href="demo.html">Medicine</a></div>
+            <div class="category"><a href="#">Science</a></div>
+        </div>
+    </section>
+    <section id="featured" class="featured-section">
+        <h2>Featured Books</h2>
+        <div class="container">
+            <div class="book">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1545494980i/40916679.jpg"
+                    alt="A Good Girl's Guide to Murder" width="70px" height="100px">
+                <h3>A Good Girl's Guide to Murder</h3>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal1">Details</button>
+            </div>
+            <div class="modal" id="ex_modal1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">A Good Girl's Guide To Murder</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1545494980i/40916679.jpg"
+                                alt="A Good Girl's Guide to Murder" width="70px" height="100px">
+                            <h3>A Good Girl's Guide to Murder</h3>
+                            <p>Author: Holly Jackson</p>
+                            <a href="https://www.flipkart.com/good-girls-guide-murder-girl-bad-blood-dead-paperback-holly-jackson/p/itm6187e5170655e?pid=9798178016763&lid=LSTBOK9798178016763LQSN5U&marketplace=FLIPKART&cmpid=content_book_8965229628_gmc"
+                                class="button">Buy Here</a><br>
+                            <a href="https://pdfroom.com/books/a-good-girls-guide-to-murder-holly-jackson/zydDM6wMg14"
+                                class="button">PDF</a>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654371463i/18144590.jpg"
+                    alt="The Alchemist" width="70px" height="100px">
+
+                <h3>The Alchemist</h3>
+
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal2">Details</button>
+            </div>
+            <div class="modal" id="ex_modal2">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">The Alchemist</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654371463i/18144590.jpg"
+                                alt="The Alchemist" width="70px" height="100px">
+                            <h3>The Alchemist</h3>
+                            <p>Author: Paulo Coelho</p>
+                            <a href="https://www.amazon.com/Alchemist-Paulo-Coelho/dp/0062315001" class="button">Buy
+                                Here</a><br>
+                            <a href="https://www.pdfdrive.com/the-alchemist-e15786132.html" class="button">PDF</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1553383690i/2657.jpg"
+                    alt="To Kill a Mockingbird" width="70px" height="100px">
+                <h3>To Kill a Mockingbird</h3>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal3">Details</button>
+            </div>
+            <div class="modal" id="ex_modal3">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">To Kill a Mockingbird</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1553383690i/2657.jpg"
+                                alt="To Kill a Mockingbird" width="70px" height="100px">
+                            <h3>To Kill a Mockingbird</h3>
+                            <p>Author: Harper Lee</p>
+                            <a href="https://www.amazon.com/Kill-Mockingbird-Harper-Lee/dp/0061120081"
+                                class="button">Buy Here</a><br>
+                            <a href="https://archive.org/details/tokillamockingbird00lee_1" class="button">PDF</a>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg"
+                    alt="1984" width="70px" height="100px">
+                <h3>1984</h3>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal4">Details</button>
+            </div>
+            <div class="modal" id="ex_modal4">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">1984</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg"
+                                alt="1984" width="70px" height="100px">
+                            <h3>1984</h3>
+                            <p>Author: George Orwell</p>
+                            <a href="https://www.amazon.com/1984-George-Orwell/dp/0451524934" class="button">Buy
+                                Here</a><br>
+                            <a href="https://www.gutenberg.org/ebooks/1533" class="button">PDF</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1661032875i/11127.jpg"
+                    alt="The Chronicles of Narnia" width="70px" height="100px">
+                <h3>The Chronicles of Narnia</h3>
+
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal5">Details</button>
+            </div>
+            <div class="modal" id="ex_modal5">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">The Chronicles of Narnia</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1661032875i/11127.jpg"
+                                alt="The Chronicles of Narnia" width="70px" height="100px">
+                            <h3>The Chronicles of Narnia</h3>
+                            <p>Author: C.S. Lewis</p>
+                            <a href="https://www.amazon.com/Chronicles-Narnia-Box-Set/dp/0064471191" class="button">Buy
+                                Here</a><br>
+                            <a href="https://www.gutenberg.org/ebooks/47140" class="button">PDF</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://m.media-amazon.com/images/S/pv-target-images/6eb8eced86619b572f044887b5580d52ffb1e0007f4331727c223e8c97f81f8b.jpg"
+                    alt="The Secret" width="70px" height="100px">
+                <h3>The Secret</h3>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal6">Details</button>
+            </div>
+            <div class="modal fade" id="ex_modal6" tn="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">The Secret</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://m.media-amazon.com/images/S/pv-target-images/6eb8eced86619b572f044887b5580d52ffb1e0007f4331727c223e8c97f81f8b.jpg"
+                                alt="The Secret" width="70px" height="100px">
+                            <h3>The Secret</h3>
+                            <p>Author: Rhonda Byrne</p>
+                            <a href="https://www.amazon.in/Secret-Hardcover-Rhonda-Byrne/dp/1847370292?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1WYWER0W24N8S"
+                                class="button">Buy Here</a><br>
+                            <a href="https://pdfroom.com/books/il-segreto-rhonda-byrne-ita/eKRd6OJ9gZp"
+                                class="button">PDF</a>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+    <section id="arrival" class="arrival-section">
+        <h2>New Arrival</h2>
+        <div class="container">
+            <div class="book">
+                <img src="https://m.media-amazon.com/images/I/81IzbD2IiIL.AC_UF1000,1000_QL80.jpg"
+                    alt="The Kite Runner" width="70px" height="100px">
+                <h3>The Kite Runner</h3>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal7">Details</button>
+            </div>
+            <div class="modal" id="ex_modal7">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">The Kite Runner</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://m.media-amazon.com/images/I/81IzbD2IiIL.AC_UF1000,1000_QL80.jpg"
+                                alt="The Kite Runner" width="70px" height="100px">
+                            <h3>The Kite Runner</h3>
+                            <p>Author: Khaled Hosseini</p>
+                            <a href="https://www.amazon.com/Kite-Runner-Khaled-Hosseini/dp/159463193X"
+                                class="button">Buy Here</a><br>
+                            <a href="https://archive.org/details/the-kite-runner-1" class="button">PDF</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://m.media-amazon.com/images/I/51APkyJzNlL.SY445_SX342.jpg" alt="The Book Thief"
+                    width="70px" height="100px">
+                <h3>The Book Thief</h3>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal8">Details</button>
+            </div>
+            <div class="modal" id="ex_modal8">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">The Book Thief</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://m.media-amazon.com/images/I/51APkyJzNlL.SY445_SX342.jpg"
+                                alt="The Book Thief" width="70px" height="100px">
+                            <h3>The Book Thief</h3>
+                            <p>Author: Markus Zusak</p>
+                            <a href="https://www.amazon.com/Book-Thief-Markus-Zusak/dp/0375842209" class="button">Buy
+                                Here</a><br>
+                            <a href="https://archive.org/details/the-book-thief-1" class="button">PDF</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://m.media-amazon.com/images/I/817tHNcyAgL.SL1500.jpg" alt="The Fault in Our Stars"
+                    width="70px" height="100px">
+                <h3>The Fault in Our Stars</h3>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal9">Details</button>
+            </div>
+            <div class="modal" id="ex_modal9">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">The Fault in Our Stars</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://m.media-amazon.com/images/I/817tHNcyAgL.SL1500.jpg"
+                                alt="The Fault in Our Stars" width="70px" height="100px">
+                            <h3>The Fault in Our Stars</h3>
+                            <p>Author: John Green</p>
+                            <a href="https://www.amazon.com/Fault-Our-Stars-John-Green/dp/0525478817" class="button">Buy
+                                Here</a><br>
+                            <a href="https://archive.org/details/the-fault-in-our-stars" class="button">PDF</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1664458703i/32620332.jpg"
+                    alt="The Seven Husbands of Evelyn Hugo" width="70px" height="100px">
+                <h3>The Seven Husbands of Evelyn Hugo</h3>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal10">Details</button>
+            </div>
+            <div class="modal" id="ex_modal10">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">The Seven Husbands of Evelyn Hugo</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1664458703i/32620332.jpg"
+                                alt="The Seven Husbands of Evelyn Hugo" width="70px" height="100px">
+                            <h3>The Seven Husbands of Evelyn Hugo</h3>
+                            <p>Author: Taylor Jenkins Reid</p>
+                            <a href="https://www.amazon.com/Seven-Husbands-Evelyn-Hugo/dp/1501139238" class="button">Buy
+                                Here</a><br>
+                            <a href="https://archive.org/details/the-seven-husbands-of-evelyn-hugo"
+                                class="button">PDF</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1630661776i/17184.jpg"
+                    alt="The Invisible Man" width="70px" height="100px">
+                <h3>The Invisible Man</h3>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal11">Details</button>
+            </div>
+            <div class="modal" id="ex_modal11">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">The Invisible Man</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1630661776i/17184.jpg"
+                                alt="The Invisible Man" width="70px" height="100px">
+                            <h3>The Invisible Man</h3>
+                            <p>Author: H.G. Wells</p>
+                            <a href="https://www.amazon.com/Invisible-Man-H-G-Wells/dp/1515371701" class="button">Buy
+                                Here</a><br>
+                            <a href="https://archive.org/details/invisibleman00well" class="button">PDF</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1405259930i/18774964.jpg"
+                    alt="A Man Called Ove" width="70px" height="100px">
+                <h3>A Man Called Ove</h3>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#ex_modal12">Details</button>
+            </div>
+            <div class="modal" id="ex_modal12">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">A Man Called Ove</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1405259930i/18774964.jpg"
+                                alt="A Man Called Ove" width="70px" height="100px">
+                            <h3>A Man Called Ove</h3>
+                            <p>Author: Fredrik Backman</p>
+                            <a href="" class="button">Buy Here</a>
+                            <a href="" class="button">PDF</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews-section">
+        <center>
+            <h2>What Our Customers Say</h2>
+        </center>
+        <div class="review-container">
+            <div class="review">
+                <p>"My kids absolutely love the books we bought! They can't put them down!"</p>
+                <span>- Sarah Johnson</span>
+            </div>
+            <div class="review">
+                <p>"The selection of children's books is fantastic! Highly recommend!"</p>
+                <span>- Mark Thompson</span>
+            </div>
+            <div class="review">
+                <p>"I couldn't put down the last book I read! Fantastic selection of fiction!"</p>
+                <span>-Emily Carter</span>
+            </div>
+            <div class="review">
+                <p>"The fiction titles available are so diverse. I've found new favorites!"</p>
+                <span>-James Smith</span>
+            </div>
+            <div class="review">
+                <p>"Each book transported me to another world. Highly recommended!"</p>
+                <span>- Taylor</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-content" id="footer">
+            <p>&copy; 2024 Book Nook. All Rights Reserved.</p>
+        </div>
+        <div class="centerdiv">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-solid fa-phone"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+    </footer>
+    <script>
+
+
+        const searchBox = document.getElementById("Searchbox");
+        const books = document.querySelectorAll('.book');
+
+        searchBox.addEventListener('input', () => {
+            const filter = searchBox.value.toLowerCase();
+
+            books.forEach(book => {
+                const title = book.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(filter)) {
+                    book.style.display = '';
+                } else {
+                    book.style.display = 'none';
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
